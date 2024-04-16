@@ -1,0 +1,77 @@
+.landing {
+  color: #fff;
+  letter-spacing: 2px;
+  height: 100vh;
+  background-image: url("../../assets/images/landing.jpg");
+  background-size: cover;
+}
+.landing .nav li.active a,
+.landing .nav li:focus a {
+  color: #fff;
+}
+.landing .nav a:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+.landing h1 {
+  word-spacing: 4px;
+}
+.landing .typewriter {
+  --typewriterDuration: 2.5s;
+  --flashCount: 6;
+  background-color: #454648;
+}
+@media (min-width: 992px) {
+  .landing .typewriter {
+    --typewriterDuration: 3s;
+    --flashCount: 8;
+    background-color: #454648;
+  }
+}
+.landing .typewriter::before {
+  --background: #fff;
+}
+.landing .subtitle {
+  color: var(--mainLightColor);
+  font-size: 23px;
+}
+@media (min-width: 778px) {
+  .landing .subtitle::after,
+  .landing .subtitle::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--mainLightColor);
+    height: 3.5px;
+    width: 40px;
+  }
+  .landing .subtitle::after {
+    right: -50px;
+  }
+  .landing .subtitle::before {
+    left: -55px;
+  }
+}
+/*start navbar*/
+.landing.show .navbar-nav .swing-content {
+  --basicDelay: 0s;
+}
+@media (min-width: 992px) {
+  .landing.show .navbar-nav .swing-content {
+    --basicDelay: 2.2s;
+  }
+}
+@media(max-width: 991px) {
+  .navbar-collapse {
+    position: relative;
+    bottom: -10px;
+    background-color: rgba(96, 96, 96, 85%);
+    z-index: 20;
+    border-radius: 7px;
+  }
+}
+@media(min-width: 768px) {
+  .navbar-collapse {
+    left: 15px;
+  }
+}

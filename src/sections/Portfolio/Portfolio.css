@@ -1,0 +1,26 @@
+.carousel {
+    --controlMargin: -20px;
+}
+@media (min-width: 576px) {
+    .carousel {
+        --controlMargin: -30px;
+    }
+}
+.carousel-control-prev {
+    left: var(--controlMargin);
+}
+.carousel-control-next {
+    right: var(--controlMargin);
+}
+@media (min-width: 1200px) {
+    .carousel-control-prev {
+        left: 60px;
+    }
+    .carousel-control-next {
+        right: 60px;
+    }
+}
+.carousel-indicators {
+    position: relative;
+    margin: calc(var(--controlMargin) * -1 / 2);
+}

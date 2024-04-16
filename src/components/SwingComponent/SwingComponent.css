@@ -1,0 +1,21 @@
+.swing {
+    --basicDelay: 0s;
+    overflow: hidden;
+}
+.swing .swing-content {
+    transform: translateY(-175%);
+}
+.show .swing .swing-content {
+    animation: swing 1.25s var(--basicDelay) forwards;
+}
+.show .swing.more-late .swing-content {
+    --basicDelay: calc(var(--typewriterDuration) + .7s);
+}
+@keyframes swing {
+    0% {
+        rotate: y 60deg;
+    }
+    100% {
+        transform: translateY(0);
+    }
+}

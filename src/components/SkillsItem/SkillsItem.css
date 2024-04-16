@@ -1,0 +1,9 @@
+.edu .skills ul li svg {
+    color: var(--mainDarkColor);
+    font-size: 15px;
+    font-weight: bold;
+    margin: -3px 5px 0 0;
+}
+.skills ul li span {
+    text-transform: normal;
+}

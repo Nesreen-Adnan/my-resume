@@ -1,0 +1,36 @@
+.portfolio .box {
+    width: 85%;
+    max-width: 750px;
+    margin: 0 auto;
+    border: 2px solid var(--mainLightColor);
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 1;
+}
+.portfolio .box img {
+    opacity: .85;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 100%;
+}
+.portfolio .box:hover img {
+    transform: rotate(4deg) scale(1.15);
+    opacity: 1;
+}
+.portfolio .box .tools {
+    bottom: 0;
+    left: 0;
+    z-index: 99;
+    border-top-right-radius: 7px;
+    padding: 10px 10px 5px 5px;
+    background-color: var(--mainDarkColorWithTransparent);
+    transform: translateX(-100%);
+}
+.portfolio .box:hover .tools {
+    transform: translateX(0);    
+}
+.portfolio .box .tools * {
+    font-size: 45px;
+}

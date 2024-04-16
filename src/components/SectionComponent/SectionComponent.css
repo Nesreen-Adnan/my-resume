@@ -1,0 +1,49 @@
+@media (min-width: 992px) {
+    .div:not(.navbar) .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-width: 900px;
+        min-height: 200px;
+    }
+}
+.light {
+    transform: translateX(-100%);
+}
+.light.show {
+    transform: translateX(0);
+}
+/* Title Style */
+.dark .title {
+    color: #fff;
+}
+.dark .title::after {
+    background-color: #fff;
+}
+.dark .title::before {
+    background-color: var(--mainDarkColor);
+    border: 2px solid #fff;
+}
+/* Typewriter Style */
+.light.show .typewriter {
+    --typewriterDelay: 1s;
+}
+.dark,
+.light {
+    --typewriterDuration: 1s;
+    --flashCount: 4;
+}
+.dark .typewriter {
+    background-color: var(--mainDarkColor);
+}
+.dark .typewriter::before {
+    --background: #fff;
+}
+/* Swing Style */
+.show.light .swing > * {
+    --basicDelay: .5s;
+    /* animation: swing 1.25s 1s forwards; */
+}
+/* .show.light .swing.more-late > * {
+    animation-delay: calc(var(--typewriterDuration) + .5s);
+} */

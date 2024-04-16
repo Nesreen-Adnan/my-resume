@@ -1,0 +1,10 @@
+.info .box .icon {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    border-radius: 50%;
+    border: 2px solid var(--mainLightColor);
+}
+.info .box svg {
+font-size: 25px;
+}

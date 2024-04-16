@@ -1,0 +1,152 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  
+  --mainDarkColor: rgb(65, 64, 66);
+  --mainDarkColorWithTransparent: rgb(65, 64, 66, 50%);
+  --mainLightColor: #929292;
+
+  --typewriterDuration: 2s;
+  --typewriterDelay: 0s;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: var(--mainDarkColor);
+}
+#root > div {
+  position: relative;
+  padding: 50px 0;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+::-webkit-scrollbar-track {
+  background-color: #fff;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(65 64 66 / 85%);
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--mainDarkColor);
+}
+
+/* Components */
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex-c {
+  display: flex;
+  justify-content: center;
+}
+.flex-s-c {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.grid-3 {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+@media (min-width: 568px) {
+  .grid-3 {
+    display: grid;
+    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+}
+.c-main {
+  color: var(--mainLightColor);
+}
+.c-main-d {
+  color: var(--mainDarkColor);
+}
+.b-main {
+  background-color: var(--mainLightColor);
+}
+.b-main-d {
+  background-color: var(--mainDarkColor);
+}
+@media (min-width: 758px) {
+  .edge {
+    position: absolute;
+    right: -20px;
+    top: -100px;
+    height: 0;
+    width: 0;
+    border-color: #fff transparent;
+    border-style: solid;
+    border-width: 0 0 100px 180vw;
+  }
+}
+.overlay::before, 
+.overlay-l::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgba(65 64 66 / 70%);
+  height: 100%;
+  width: 100%;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+.overlay-l::before {
+  background-color: rgba(146 146 146 / 50%);
+  z-index: 2;
+}
+.transition {
+  transition: .5s;
+}
+.lazy-transition {
+  transition: 1s;
+}
+.text-normal {
+  text-transform: none;
+}
+/* Animations */
+.typewriter {
+  --flashCount: 4;
+  position: absolute;
+  width: calc(100% + 5px);
+  height: 73%;
+  background-color: #fff;
+  right: -5px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.show .typewriter{
+  animation: minimize var(--typewriterDuration) var(--typewriterDelay) linear forwards;
+}
+.typewriter::before {
+  --background: var(--mainDarkColor);
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 100%;
+  left: 0;
+  background-color: var(--background);
+}
+.show .typewriter::before {
+  animation: calc(var(--typewriterDuration) / (var(--flashCount) - 2)) var(--typewriterDelay) flash linear var(--flashCount) forwards;
+}
+@keyframes minimize {
+  100% {
+    width: 0;
+  }
+}
+@keyframes flash {
+  30% {
+    background-color: var(--background);
+  }
+  70% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
