@@ -7,12 +7,8 @@ function ProjectComponent({name, imgSrc, hasGitPage, tools}) {
       `https://nesreen-adnan.github.io/${name}/` : 
       `https://${name}.netlify.app`,
       title = name.includes(2) ? name.slice(0, -12) : name;
-  useEffect(() => box.onclick = () => {
-    console.log(link)
-    open(link)
-  }, [])
   return (
-    <div ref={box} className="box position-relative">
+    <div ref={box} className="box position-relative" onClick={() => open(link)}>
       <div className="tools position-absolute flex gap-2 transition">
         {tools}
       </div>
